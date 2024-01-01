@@ -1,15 +1,18 @@
-package com.qstudy.qstudy.api.User;
+package com.qstudy.qstudy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-public class UserApplication {
-	public static void main(String[] args) {
-      SpringApplication.run(UserApplication.class, args);
+@RestController
+public class QstudyApplication {
+    public static void main(String[] args) {
+      SpringApplication.run(QstudyApplication.class, args);
     }
+    
     @GetMapping("/hello")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
       return String.format("Hello 22 %s!", name);
