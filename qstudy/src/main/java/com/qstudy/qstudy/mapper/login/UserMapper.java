@@ -1,11 +1,11 @@
-package com.qstudy.qstudy.mapper;
+package com.qstudy.qstudy.mapper.login;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
-import com.qstudy.qstudy.dto.User;
+import com.qstudy.qstudy.dto.login.User;
 
 @Repository
 @Mapper
