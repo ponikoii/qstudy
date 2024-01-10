@@ -7,5 +7,10 @@
   <select id="getUsers" resultType="com.qstudy.qstudy.dto.login.User">
     SELECT * FROM userprofile
   </select>
+  
+  <!-- 구글 로그인 데이터 저장 -->
+  <insert id="saveGoogle" parameterType="com.qstudy.qstudy.dto.login.User">
+	  INSERT INTO qstudy(email, name) VALUES (#{email},#{name});
+  </insert>
 
 </mapper>

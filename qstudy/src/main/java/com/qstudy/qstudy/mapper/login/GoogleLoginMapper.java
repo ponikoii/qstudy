@@ -1,5 +1,7 @@
 package com.qstudy.qstudy.mapper.login;
 
-public class GoogleLoginMapper {
+import com.qstudy.qstudy.dto.login.User;
 
+public interface GoogleLoginMapper {
+	void saveGoogle(User user);
 }
