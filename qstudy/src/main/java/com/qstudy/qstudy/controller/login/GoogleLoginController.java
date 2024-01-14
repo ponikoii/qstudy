@@ -14,14 +14,14 @@ import com.qstudy.qstudy.service.login.GoogleLoginService;
 @RestController
 @CrossOrigin
 public class GoogleLoginController {
-	private final GoogleLoginService googleLoginService;
+	private GoogleLoginService googleLoginService;
 	
 	public GoogleLoginController(GoogleLoginService googleLoginService) {
 		this.googleLoginService = googleLoginService;
 	}
 	
 	@PostMapping(value = "/login/google")
-	 public ResponseEntity<?> LoginGoogle(@RequestBody Object requestBody){
+	 public ResponseEntity<?> LoginGoogle(@RequestBody HashMap<String, Object> requestBody){
 		googleLoginService.saveGoogle(requestBody);
 		
        HashMap<String, Object> result = new HashMap<>();
