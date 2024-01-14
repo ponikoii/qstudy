@@ -1,5 +1,12 @@
 package com.qstudy.qstudy.mapper.login;
 
-public class GithubLoginMapper {
+import org.apache.ibatis.annotations.Mapper;
 
+import com.qstudy.qstudy.dto.login.User;
+
+@Mapper
+public interface GithubLoginMapper {
+
+	void saveGithub(User user);
+	
 }

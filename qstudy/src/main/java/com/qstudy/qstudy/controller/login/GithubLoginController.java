@@ -1,6 +1,8 @@
 package com.qstudy.qstudy.controller.login;
 
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,19 +14,22 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qstudy.qstudy.dto.login.Github;
 import com.qstudy.qstudy.service.login.GithubLoginService;
 
 @RestController
 @CrossOrigin
 public class GithubLoginController {
-	private final GithubLoginService githubLoginService = new GithubLoginService();
+	private GithubLoginService githubLoginService;
+	
+	public GithubLoginController(GithubLoginService githubLoginService) {
+		this.githubLoginService = githubLoginService;
+	}
 	
 	@GetMapping(value = "/login/github")
 	 public ResponseEntity<?> LoginGithub(@RequestParam(name="code") String code){
@@ -58,14 +63,15 @@ public class GithubLoginController {
 
         // GET 요청 보내기
         ResponseEntity<String> responseEntity = restTemplate.exchange("https://api.github.com/user", HttpMethod.GET, requestEntity, String.class);
-        
-        System.out.println(responseEntity);
-
-        // 요청 엔터티 생성
-        // externalApiUrl은 외부 API의 엔드포인트 URL입니다.
-        
-        
-		HashMap<String, Object> result = new HashMap<>();		
+        HashMap<String, Object> result = new HashMap<>();
+        try {
+			 result = jsonToMap(responseEntity.getBody());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+                
+        githubLoginService.saveGithub(result);
 		return new ResponseEntity<>(result, HttpStatus.OK);
    }
 	
@@ -80,5 +86,10 @@ public class GithubLoginController {
             return null; // 매치되는 값이 없을 경우 처리
         }
     }
-
+	
+	public HashMap<String, Object> jsonToMap(String result) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        HashMap<String, Object> returnMap = mapper.readValue(result, HashMap.class);
+        return returnMap;
+    }
 }

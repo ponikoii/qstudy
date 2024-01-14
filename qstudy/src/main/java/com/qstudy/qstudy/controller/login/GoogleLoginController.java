@@ -26,7 +26,7 @@ public class GoogleLoginController {
 		
        HashMap<String, Object> result = new HashMap<>();
        result.put("message", "Google Data saved success");
-		System.out.println(requestBody);
+       System.out.println(requestBody);
 		
 
       return new ResponseEntity<>(result, HttpStatus.OK);
