@@ -25,6 +25,10 @@ public class GoogleLoginService {
 	
 	public void saveGoogle(HashMap<String, Object> requestBody) {
 		// requestBody를 JSON 문자열로 변환
+		System.out.println(requestBody);
+		System.out.println(requestBody.get("sub"));
+		System.out.println(requestBody.get("email"));
+		System.out.println(requestBody.get("name"));
 		
 		// JOSN 문자열에서 email, name 추출
 		String id = (String)requestBody.get("sub");
