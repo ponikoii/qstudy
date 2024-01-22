@@ -1,6 +1,7 @@
 package com.qstudy.qstudy.service.group;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,8 +22,7 @@ public class GroupListService {
 		this.groupListMapper = groupListMapper;
 	}
 	
-	public void getAllGroupList(HashMap<String, Object> requestBody) {
-		String id = requestBody.get("id").toString();
-		groupListMapper.getAllGroupList(id);
+	public List<GroupList> getAllGroupList() {
+		return groupListMapper.getAllGroupList();
 	}
 }
