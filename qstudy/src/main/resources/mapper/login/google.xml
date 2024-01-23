@@ -15,7 +15,7 @@
 <mapper namespace="com.qstudy.qstudy.mapper.login.GoogleLoginMapper">
 	<!-- 구글 로그인 데이터 저장 -->
   <insert id="saveGoogle" parameterType="com.qstudy.qstudy.dto.login.User">
-	  INSERT INTO userprofile(id, email, nickname) VALUES (#{id},#{email},#{nickname});
+	  INSERT INTO userprofile(id, email, nickname) VALUES (#{id},#{email},#{nickname}) ON DUPLICATE KEY UPDATE id=#{id};
   </insert>
 </mapper>
 
