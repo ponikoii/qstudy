@@ -4,7 +4,17 @@
 
 <mapper namespace="com.qstudy.qstudy.mapper.group.GroupListMapper">
 	<!-- 깃허브 로그인 데이터 저장 -->
-  <select id="getAllGroupList" parameterType="com.qstudy.qstudy.dto.group.GroupList">
-	  select * from group_list;
+  <select id="getAllGroupList" parameterType="String">
+	  select * from group_list WHERE writer != #{id} and group_id not in (
+		select group_id from group_attend where user_id = #{id}
+		);
   </select>
+  
+   <select id="getAttendGroupList" parameterType="String">
+	  select * from group_attend where user_id = #{id};
+  </select>
+  
+   <insert id="insertAttendGroup" parameterType="com.qstudy.qstudy.dto.group.GroupAttendList">
+	  insert into group_attend(user_id, group_id, enter_time) values(#{user_id}, #{group_id}, now());
+  </insert>
 </mapper>
