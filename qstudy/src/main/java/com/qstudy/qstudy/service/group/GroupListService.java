@@ -39,4 +39,7 @@ public class GroupListService {
 		ga.setUser_id(user_id);
 		groupListMapper.insertAttendGroup(ga);
 	}
+	public List<GroupList> getMyGroupList(String id){
+		return groupListMapper.getMyGroupList(id);
+	}
 }

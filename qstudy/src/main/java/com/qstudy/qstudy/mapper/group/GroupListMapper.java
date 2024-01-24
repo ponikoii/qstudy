@@ -13,4 +13,5 @@ public interface GroupListMapper {
 	List<GroupList> getAllGroupList(String id);
 	List<GroupAttendList> getAttendGroupList(String id);
 	void insertAttendGroup(GroupAttendList ga);
+	List<GroupList> getMyGroupList(String id);
 }

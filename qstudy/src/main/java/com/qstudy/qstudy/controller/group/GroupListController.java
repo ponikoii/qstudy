@@ -38,7 +38,7 @@ public class GroupListController {
 	@GetMapping(value = "/group/my")
 	 public ResponseEntity<?> GroupMyList(@RequestParam(value="id") String id){
 	  //원래 이러면 안되지만,, 임시적 허용
-      List<GroupAttendList> result = groupListService.getAttendGroupList(id);
+      List<GroupList> result = groupListService.getMyGroupList(id);
       System.out.println("[Result]");
       System.out.println(result);
 

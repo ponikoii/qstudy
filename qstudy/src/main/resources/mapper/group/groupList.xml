@@ -17,4 +17,10 @@
    <insert id="insertAttendGroup" parameterType="com.qstudy.qstudy.dto.group.GroupAttendList">
 	  insert into group_attend(user_id, group_id, enter_time) values(#{user_id}, #{group_id}, now());
   </insert>
+  
+  <select id="getMyGroupList" parameterType="String">
+	  select gl.group_id , gl.title , gl.memo , gl.writer
+	  from group_attend ga , group_list gl 
+	  where gl.group_id = ga.group_id and ga.user_id =#{id};
+  </select>
 </mapper>
