@@ -6,7 +6,14 @@ public class GroupAttendList {
 	private String group_id;
 	private String user_id;
 	private Timestamp enter_time;
+	private String color;
 	
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
 	public String getGroup_id() {
 		return group_id;
 	}
