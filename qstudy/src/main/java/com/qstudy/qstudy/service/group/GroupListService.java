@@ -34,9 +34,11 @@ public class GroupListService {
 		GroupAttendList ga = new GroupAttendList();
 		String group_id = (String)requestBody.get("group_id");
 		String user_id = (String)requestBody.get("user_id");
+		String color = (String)requestBody.get("color");
 		
 		ga.setGroup_id(group_id);
 		ga.setUser_id(user_id);
+		ga.setColor(color);
 		groupListMapper.insertAttendGroup(ga);
 	}
 	public List<GroupList> getMyGroupList(String id){

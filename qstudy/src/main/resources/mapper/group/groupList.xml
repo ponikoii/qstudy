@@ -15,7 +15,7 @@
   </select>
   
    <insert id="insertAttendGroup" parameterType="com.qstudy.qstudy.dto.group.GroupAttendList">
-	  insert into group_attend(user_id, group_id, enter_time) values(#{user_id}, #{group_id}, now());
+	  insert into group_attend(user_id, group_id, enter_time, color) values(#{user_id}, #{group_id}, now(), #{color});
   </insert>
   
   <select id="getMyGroupList" parameterType="String">
