@@ -7,8 +7,16 @@ public class GroupList {
 	private String title;
 	private String memo;
 	private String writer;
+	private String color;
 	private Timestamp upload_date;
 	
+
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
 	public String getGroup_id() {
 		return group_id;
 	}
