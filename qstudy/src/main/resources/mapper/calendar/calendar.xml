@@ -7,4 +7,8 @@
   <select id="getCalendarMonthInfo" parameterType="String">
 	  select * from calendar;
   </select>
+  
+  <insert id="insertEvent" parameterType="com.qstudy.qstudy.dto.calendar.Calendar">
+	  insert into calendar(user_id, group_id, title, start_date, end_date, memo, update_date) values(#{user_id), #{group_id}, #{title}, #{start_date}, #{end_date}, #{memo}, #{update_date});
+  </insert>
 </mapper>
