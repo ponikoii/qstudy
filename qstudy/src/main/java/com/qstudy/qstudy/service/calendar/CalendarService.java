@@ -34,8 +34,14 @@ public class CalendarService {
 		String start_date = (String)requestBody.get("start_date");
 		String end_date = (String)requestBody.get("end_date");
 		String memo = (String)requestBody.get("memo");
-			
 		
+		ca.setUser_id(user_id);
+		ca.setGroup_id(group_id);
+		ca.setTitle(title);
+		ca.setStart_date(start_date);
+		ca.setEnd_date(end_date);
+		ca.setMemo(memo);
+			
 		calendarMapper.insertEvent(ca);
 	}
 }

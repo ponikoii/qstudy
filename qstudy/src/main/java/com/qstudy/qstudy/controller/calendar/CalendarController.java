@@ -37,7 +37,7 @@ public class CalendarController {
 	
 	@PostMapping(value = "/calendar/event")
 	 public ResponseEntity<?> EventAdd(@RequestBody HashMap<String, Object> requestBody){
-//		calendarService.insertEvent(requestBody);
+		calendarService.insertEvent(requestBody);
 		
 		HashMap<String, Object> result = new HashMap<>();
 		result.put("message", "Success Attend ");

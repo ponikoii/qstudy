@@ -9,6 +9,6 @@
   </select>
   
   <insert id="insertEvent" parameterType="com.qstudy.qstudy.dto.calendar.Calendar">
-	  insert into calendar(user_id, group_id, title, start_date, end_date, memo, update_date) values(#{user_id), #{group_id}, #{title}, #{start_date}, #{end_date}, #{memo}, #{update_date});
+	  insert into calendar(user_id, group_id, title, start_date, end_date, memo, update_date) values(#{user_id}, #{group_id}, #{title}, #{start_date}, #{end_date}, #{memo}, now());
   </insert>
 </mapper>
