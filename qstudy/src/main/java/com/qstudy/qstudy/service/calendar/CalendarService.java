@@ -44,4 +44,7 @@ public class CalendarService {
 			
 		calendarMapper.insertEvent(ca);
 	}
+	public List<Calendar> getCalendarList(String id){
+		return calendarMapper.getCalendarList(id);
+	}
 }

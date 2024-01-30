@@ -10,4 +10,5 @@ import com.qstudy.qstudy.dto.calendar.Calendar;
 public interface CalendarMapper {
 	List<Calendar> getCalendarMonthInfo(String month);
 	void insertEvent(Calendar ca);
+	List<Calendar> getCalendarList(String id);
 }

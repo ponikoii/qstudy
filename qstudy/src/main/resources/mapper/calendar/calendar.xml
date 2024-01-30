@@ -11,4 +11,10 @@
   <insert id="insertEvent" parameterType="com.qstudy.qstudy.dto.calendar.Calendar">
 	  insert into calendar(user_id, group_id, title, start_date, end_date, memo, update_date) values(#{user_id}, #{group_id}, #{title}, #{start_date}, #{end_date}, #{memo}, now());
   </insert>
+  
+  <select id="getCalendarList" parameterType="String">
+	select *, 
+    (select color from group_attend ga where ga.group_id = c.group_id and ga.user_id = c.user_id) as color 
+    from calendar c where user_id = #{user_id};
+  </select>
 </mapper>

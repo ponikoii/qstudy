@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.qstudy.qstudy.dto.calendar.Calendar;
+import com.qstudy.qstudy.dto.group.GroupList;
 import com.qstudy.qstudy.service.calendar.CalendarService;
 
 
@@ -45,5 +46,17 @@ public class CalendarController {
 
 		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
+	
+	@GetMapping(value = "/calendar/my")
+	 public ResponseEntity<?> MyEventList(@RequestParam(value="id") String id){
+		  //원래 이러면 안되지만,, 임시적 허용
+		 
+	      List<Calendar> result = calendarService.getCalendarList(id);
+	      System.out.println("[Event List]");
+
+	     return new ResponseEntity<>(result, HttpStatus.OK);
+		}
+	
+	
 	
 }
