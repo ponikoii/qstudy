@@ -5,7 +5,7 @@
 <mapper namespace="com.qstudy.qstudy.mapper.group.GroupListMapper">
 	<!-- 깃허브 로그인 데이터 저장 -->
   <select id="getAllGroupList" parameterType="String">
-	  select * from group_list WHERE writer != #{id} and group_id not in (
+	  select *, (select nickname from userprofile u where gl.writer=u.id) as nickname from group_list gl WHERE writer != #{id} and group_id not in (
 		select group_id from group_attend where user_id = #{id}
 		);
   </select>
@@ -19,7 +19,7 @@
   </insert>
   
   <select id="getMyGroupList" parameterType="String">
-	  select gl.group_id , gl.title , gl.memo , gl.writer, ga.color
+   	  select gl.group_id , gl.title , gl.memo , gl.writer, (select nickname from userprofile u where u.id = gl.writer) as nickname,ga.color
 	  from group_attend ga , group_list gl 
 	  where gl.group_id = ga.group_id and ga.user_id =#{id};
   </select>

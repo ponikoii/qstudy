@@ -7,10 +7,17 @@ public class GroupList {
 	private String title;
 	private String memo;
 	private String writer;
+	private String nickname;
 	private String color;
 	private Timestamp upload_date;
 	
 
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
 	public String getColor() {
 		return color;
 	}
