@@ -1,6 +1,7 @@
 package com.qstudy.qstudy.controller.login;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.qstudy.qstudy.service.login.UserService;
+import com.qstudy.qstudy.dto.login.User;
 
 @RestController
 @CrossOrigin
@@ -31,5 +33,14 @@ public class UserController {
 		
      return new ResponseEntity<>(result, HttpStatus.OK);
  }
-
+	// 로그인
+	@PostMapping(value = "/login")
+	public ResponseEntity<?> Login(@RequestBody HashMap<String, Object> requestBody){
+		
+		List<User> result = userService.getUser(requestBody);
+		
+		return new ResponseEntity<>(result, HttpStatus.OK);
+	
+	}
+	
 }

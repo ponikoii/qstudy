@@ -7,5 +7,11 @@
   <insert id="registerUser" parameterType="com.qstudy.qstudy.dto.login.User">
 	  insert into userprofile(id, password, email, nickname) values(#{id}, #{password}, #{email}, #{nickname});
   </insert>
+  
+  <select id="login" parameterType="com.qstudy.qstudy.dto.login.User">
+	  SELECT *
+	  FROM userprofile
+	  WHERE id = #{id} and password = #{password};
+  </select>
 </mapper>
 
