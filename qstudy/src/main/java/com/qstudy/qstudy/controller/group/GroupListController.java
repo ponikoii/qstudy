@@ -56,4 +56,16 @@ public class GroupListController {
 		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
 	
+	@PostMapping(value = "/group/add")
+	 public ResponseEntity<?> NewGroupAdd(@RequestBody HashMap<String, Object> requestBody){
+		groupListService.insertNewGroup(requestBody);
+		
+		HashMap<String, Object> result = new HashMap<>();
+		result.put("message", "Success Attend ");
+		System.out.println(requestBody);
+
+		return new ResponseEntity<>(result, HttpStatus.OK);
+	}
+	
+	
 }

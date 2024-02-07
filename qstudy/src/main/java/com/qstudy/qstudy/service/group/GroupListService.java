@@ -44,4 +44,18 @@ public class GroupListService {
 	public List<GroupList> getMyGroupList(String id){
 		return groupListMapper.getMyGroupList(id);
 	}
+	
+	public void insertNewGroup(HashMap<String, Object> requestBody) {
+		GroupList gl = new GroupList();
+		String group_id = (String)requestBody.get("group_id");
+		String writer = (String)requestBody.get("writer");
+		String title = (String)requestBody.get("title");
+		String memo = (String)requestBody.get("memo");
+		
+		gl.setGroup_id(group_id);
+		gl.setWriter(writer);
+		gl.setTitle(title);
+		gl.setMemo(memo);
+		groupListMapper.insertNewGroup(gl);
+	}
 }
