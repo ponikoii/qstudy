@@ -58,4 +58,8 @@ public class GroupListService {
 		gl.setMemo(memo);
 		groupListMapper.insertNewGroup(gl);
 	}
+	
+	public List<GroupAttendList> getGroupMember(String id){
+		return groupListMapper.getGroupMember(id);
+	}
 }

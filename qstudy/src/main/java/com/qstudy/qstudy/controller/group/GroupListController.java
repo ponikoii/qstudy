@@ -56,6 +56,15 @@ public class GroupListController {
 		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
 	
+	@GetMapping(value = "/group/attend/member")
+	public ResponseEntity<?> GroupMember(@RequestParam(value="id") String id){
+	       List<GroupAttendList> result = groupListService.getGroupMember(id);
+	       System.out.println(result);
+
+	      return new ResponseEntity<>(result, HttpStatus.OK);
+	      }
+	
+	
 	@PostMapping(value = "/group/add")
 	 public ResponseEntity<?> NewGroupAdd(@RequestBody HashMap<String, Object> requestBody){
 		groupListService.insertNewGroup(requestBody);

@@ -27,4 +27,10 @@
 	  from group_attend ga , group_list gl 
 	  where gl.group_id = ga.group_id and ga.user_id =#{id};
   </select>
+  
+  <select id="getGroupMember" parameterType="String">
+	  SELECT  u.nickname , u.id, ga.group_id
+	  from group_attend ga, userprofile u 
+	  WHERE ga.group_id = #{group_id} and ga.user_id = u.id
+	  </select>
 </mapper>
