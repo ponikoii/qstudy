@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.qstudy.qstudy.dto.group.GroupAttendList;
 import com.qstudy.qstudy.dto.group.GroupList;
+import com.qstudy.qstudy.dto.group.GroupMember;
 import com.qstudy.qstudy.service.group.GroupListService;
 
 @RestController
@@ -58,7 +59,7 @@ public class GroupListController {
 	
 	@GetMapping(value = "/group/attend/member")
 	public ResponseEntity<?> GroupMember(@RequestParam(value="id") String id){
-	       List<GroupAttendList> result = groupListService.getGroupMember(id);
+	       List<GroupMember> result = groupListService.getGroupMember(id);
 	       System.out.println(result);
 
 	      return new ResponseEntity<>(result, HttpStatus.OK);

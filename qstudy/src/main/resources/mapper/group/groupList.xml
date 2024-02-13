@@ -31,6 +31,6 @@
   <select id="getGroupMember" parameterType="String">
 	  SELECT  u.nickname , u.id, ga.group_id
 	  from group_attend ga, userprofile u 
-	  WHERE ga.group_id = #{group_id} and ga.user_id = u.id
+	  WHERE ga.group_id = #{id} and ga.user_id = u.id
 	  </select>
 </mapper>

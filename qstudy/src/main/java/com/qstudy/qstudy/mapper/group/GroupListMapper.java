@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.qstudy.qstudy.dto.group.GroupAttendList;
 import com.qstudy.qstudy.dto.group.GroupList;
+import com.qstudy.qstudy.dto.group.GroupMember;
 
 @Mapper
 public interface GroupListMapper {
@@ -15,5 +16,5 @@ public interface GroupListMapper {
 	void insertAttendGroup(GroupAttendList ga);
 	void insertNewGroup(GroupList gl);
 	List<GroupList> getMyGroupList(String id);
-	List<GroupAttendList> getGroupMember(String id);
+	List<GroupMember> getGroupMember(String id);
 }

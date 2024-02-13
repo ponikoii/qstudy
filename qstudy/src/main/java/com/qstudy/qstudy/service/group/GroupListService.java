@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.qstudy.qstudy.dto.group.GroupAttendList;
 import com.qstudy.qstudy.dto.group.GroupList;
+import com.qstudy.qstudy.dto.group.GroupMember;
 import com.qstudy.qstudy.dto.login.User;
 import com.qstudy.qstudy.mapper.group.GroupListMapper;
 
@@ -59,7 +60,7 @@ public class GroupListService {
 		groupListMapper.insertNewGroup(gl);
 	}
 	
-	public List<GroupAttendList> getGroupMember(String id){
+	public List<GroupMember> getGroupMember(String id){
 		return groupListMapper.getGroupMember(id);
 	}
 }
