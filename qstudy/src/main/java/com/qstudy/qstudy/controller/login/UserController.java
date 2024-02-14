@@ -43,4 +43,15 @@ public class UserController {
 	
 	}
 	
+	@PostMapping(value = "/update")
+	public ResponseEntity<?> Update(@RequestBody HashMap<String, Object> requestBody){
+		userService.updateUser(requestBody);
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("message", "Google Data saved success");
+        System.out.println(requestBody);
+		
+		return new ResponseEntity<>(result, HttpStatus.OK);
+	
+	}
+	
 }

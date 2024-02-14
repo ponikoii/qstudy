@@ -7,7 +7,7 @@ public class User {
 	private String password;
 	private String email;
 	private String nickname;
-	private Byte[] pickture;
+	private byte[] pickture;
 	private String updateId;
 	private Timestamp updateDate;
 	private Timestamp registerDate;
@@ -37,11 +37,11 @@ public class User {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-	public Byte[] getPickture() {
+	public byte[] getPickture() {
 		return pickture;
 	}
-	public void setPickture(Byte[] pickture) {
-		this.pickture = pickture;
+	public void setPickture(byte[] imageBytes) {
+		this.pickture = imageBytes;
 	}
 	public String getUpdateId() {
 		return updateId;
