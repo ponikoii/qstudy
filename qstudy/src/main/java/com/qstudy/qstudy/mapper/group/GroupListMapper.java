@@ -17,4 +17,5 @@ public interface GroupListMapper {
 	void insertNewGroup(GroupList gl);
 	List<GroupList> getMyGroupList(String id);
 	List<GroupMember> getGroupMember(String id);
+	void insertNewGroupAttend(GroupList gl);
 }

@@ -52,12 +52,15 @@ public class GroupListService {
 		String writer = (String)requestBody.get("writer");
 		String title = (String)requestBody.get("title");
 		String memo = (String)requestBody.get("memo");
+		String color = (String)requestBody.get("color");
 		
 		gl.setGroup_id(group_id);
 		gl.setWriter(writer);
 		gl.setTitle(title);
 		gl.setMemo(memo);
+		gl.setColor(color);
 		groupListMapper.insertNewGroup(gl);
+		groupListMapper.insertNewGroupAttend(gl);
 	}
 	
 	public List<GroupMember> getGroupMember(String id){

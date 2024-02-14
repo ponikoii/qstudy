@@ -18,8 +18,13 @@
 	  insert into group_attend(user_id, group_id, enter_time, color) values(#{user_id}, #{group_id}, now(), #{color});
   </insert>
   
+  
    <insert id="insertNewGroup" parameterType="com.qstudy.qstudy.dto.group.GroupList">
 	  insert into group_list(group_id, title, memo , writer, upload_date) values(#{group_id}, #{title}, #{memo}, #{writer}, now());
+  </insert>
+  
+    <insert id="insertNewGroupAttend" parameterType="com.qstudy.qstudy.dto.group.GroupList">
+	  insert into group_attend(group_id, user_id, enter_time, color) values(#{group_id}, #{writer}, now(), #{color});
   </insert>
   
   <select id="getMyGroupList" parameterType="String">
