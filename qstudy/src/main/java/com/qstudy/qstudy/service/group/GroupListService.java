@@ -66,4 +66,6 @@ public class GroupListService {
 	public List<GroupMember> getGroupMember(String id){
 		return groupListMapper.getGroupMember(id);
 	}
+	
+
 }

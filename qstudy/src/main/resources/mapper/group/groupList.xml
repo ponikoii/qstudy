@@ -33,9 +33,24 @@
 	  where gl.group_id = ga.group_id and ga.user_id =#{id};
   </select>
   
+     <!-- 스터디 그룹원 조회 -->
   <select id="getGroupMember" parameterType="String">
 	  SELECT  u.nickname , u.id, ga.group_id
 	  from group_attend ga, userprofile u 
 	  WHERE ga.group_id = #{id} and ga.user_id = u.id
 	  </select>
+	  
+	   <!-- 스터디 그룹원 삭제 -->
+	  <delete id="deleteGroupMember">
+		  DELETE FROM group_attend WHERE user_id = #{user_id} AND group_id = #{group_id};
+	  </delete>
+	 
+	 <!-- 스터디 삭제 -->
+	  <delete id="deleteGroup">
+		  DELETE FROM group_list,group_attend 
+		  USING group_list 
+		  LEFT JOIN group_attend 
+		  ON group_list.group_id = group_attend.group_id 
+		  WHERE group_attend.group_id = #{group_id};
+	  </delete>
 </mapper>
