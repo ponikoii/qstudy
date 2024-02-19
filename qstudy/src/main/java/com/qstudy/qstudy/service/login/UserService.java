@@ -50,17 +50,19 @@ public class UserService {
 		byte[] imageBytes = null;
         String base64Image = requestBody.get("picture").toString(); // "image"는 이미지를 담고 있는 키로 가정
 
-        if (base64Image != null && !base64Image.isEmpty()) {
+        if (base64Image != "" && base64Image != null && !base64Image.isEmpty()) {
             String base64ImageWithoutPrefix = base64Image.split(",")[1];
             imageBytes = Base64.getDecoder().decode(base64ImageWithoutPrefix);
         }
+        user.setId(requestBody.get("id").toString());
 		user.setNickname(requestBody.get("nickname").toString());
 		user.setPassword(requestBody.get("password").toString());
 		user.setEmail(requestBody.get("email").toString());
-		user.setPickture(imageBytes);
+		user.setPicture(imageBytes);
 		
-		//  user 데이터베이스에 저장
-		//userMapper.registerUser(user);
+		
+		//  user 데이터베이스 수정
+		userMapper.updateUser(user);
 			
 	}
 	

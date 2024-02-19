@@ -13,5 +13,14 @@
 	  FROM userprofile
 	  WHERE id = #{id} and password = #{password};
   </select>
+  
+  <update id="updateUser" parameterType="com.qstudy.qstudy.dto.login.User">
+	  update userprofile set 
+	  	nickname=#{nickname},
+	  	password=#{password},
+	  	picture=#{picture},
+	  	email=#{email}
+	  	WHERE id=#{id}
+  </update>
 </mapper>
 

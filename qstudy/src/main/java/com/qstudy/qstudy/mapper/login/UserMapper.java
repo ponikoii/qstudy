@@ -9,5 +9,6 @@ import com.qstudy.qstudy.dto.login.User;
 public interface UserMapper {
 	void registerUser(User user);
 	List<User> login(User user);
+	void updateUser(User user);
 
 }
