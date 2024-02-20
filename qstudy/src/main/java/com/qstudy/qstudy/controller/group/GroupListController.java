@@ -86,8 +86,12 @@ public class GroupListController {
 	}
 	
 	@DeleteMapping(value = "/group/delete")
-	public ResponseEntity<?> deleteGroup(@PathVariable String group_id) {
-		return null;
+	public ResponseEntity<?> deleteGroup(@RequestBody HashMap<String, Object> requestBody) {
+		System.out.println("group delete: " + requestBody);
+		groupListService.deleteGroup(requestBody);
+		
+		HashMap<String, Object> result = new HashMap<>();
+		return new ResponseEntity<>(result, HttpStatus.OK);
 		
 	}
 	
