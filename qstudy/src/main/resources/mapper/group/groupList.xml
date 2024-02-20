@@ -45,18 +45,18 @@
 	  WHERE ga.group_id = #{id} and ga.user_id = u.id
 	  </select>
 	  
-	   <!-- 스터디 그룹원 삭제 -->
+	   <!-- 스터디 그룹원 삭제/추방? -->
 	  <delete id="deleteGroupMember">
 		  DELETE FROM group_attend WHERE user_id = #{user_id} AND group_id = #{group_id};
 	  </delete>
 	 
 	 <!-- 스터디 삭제 -->
 	  <delete id="deleteGroup">
-		  DELETE FROM group_list,group_attend 
-		  USING group_list 
-		  LEFT JOIN group_attend 
-		  ON group_list.group_id = group_attend.group_id 
-		  WHERE group_attend.group_id = #{group_id};
+		delete ga, gl, ca 
+		from group_attend ga
+		join group_list gl on ga.group_id = gl.group_id
+		join calendar ca on ga.group_id = ca.group_id
+		where ga.group_id = #{group_id};
 	  </delete>
 	  
 	  

@@ -66,10 +66,16 @@ public class GroupListService {
 	public List<GroupMember> getGroupMember(String id){
 		return groupListMapper.getGroupMember(id);
 	}
-//	public void deleteGroupMember(HashMap<String, Object> reqeustBody) {
-//		groupListMapper.deleteGroupMember();
-//		
-//	}
+	public void deleteGroupMember(HashMap<String, Object> requestBody) {
+		GroupAttendList ga = new GroupAttendList();
+		String group_id = (String)requestBody.get("group_id");
+		String user_id = (String)requestBody.get("user_id");
+		
+		ga.setGroup_id(group_id);
+		ga.setUser_id(user_id);
+		groupListMapper.deleteGroupMember(ga);
+		
+	}
 	public void deleteGroup(HashMap<String, Object> requestBody) {
 		GroupList gl = new GroupList();
 		String group_id = (String)requestBody.get("group_id");
