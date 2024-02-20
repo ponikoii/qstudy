@@ -53,4 +53,6 @@
 		  ON group_list.group_id = group_attend.group_id 
 		  WHERE group_attend.group_id = #{group_id};
 	  </delete>
+	  
+	  
 </mapper>
