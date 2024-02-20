@@ -9,9 +9,16 @@ public class GroupList {
 	private String writer;
 	private String nickname;
 	private String color;
+	private String total;
 	private Timestamp upload_date;
 	
 
+	public String getTotal() {
+		return total;
+	}
+	public void setTotal(String total) {
+		this.total = total;
+	}
 	public String getNickname() {
 		return nickname;
 	}
