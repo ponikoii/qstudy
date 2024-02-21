@@ -49,6 +49,10 @@
 	  <delete id="deleteGroupMember">
 		  DELETE FROM group_attend WHERE user_id = #{user_id} AND group_id = #{group_id};
 	  </delete>
+	  
+	  <delete id="deleteEvent">
+		  DELETE FROM calendar WHERE user_id = #{user_id} AND group_id = #{group_id};
+	  </delete>
 	 
 	 <!-- 스터디 삭제 -->
 	  <delete id="deleteGroup">

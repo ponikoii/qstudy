@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.qstudy.qstudy.dto.calendar.Calendar;
 import com.qstudy.qstudy.dto.group.GroupAttendList;
 import com.qstudy.qstudy.dto.group.GroupList;
 import com.qstudy.qstudy.dto.group.GroupMember;
@@ -19,6 +20,7 @@ public interface GroupListMapper {
 	List<GroupMember> getGroupMember(String id);
 	void insertNewGroupAttend(GroupList gl);
 	void deleteGroupMember(GroupAttendList ga);
+	void deleteEvent(Calendar c);
 	void deleteGroup(GroupList gl);
 
 }
