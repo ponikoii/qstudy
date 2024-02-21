@@ -49,14 +49,22 @@ public class CalendarController {
 	
 	@GetMapping(value = "/calendar/my")
 	 public ResponseEntity<?> MyEventList(@RequestParam(value="id") String id){
-		  //원래 이러면 안되지만,, 임시적 허용
-		 
-	      List<Calendar> result = calendarService.getCalendarList(id);
-	      System.out.println("[Event List]");
+	  //원래 이러면 안되지만,, 임시적 허용
+	 
+      List<Calendar> result = calendarService.getCalendarList(id);
+      System.out.println("[Event List]");
 
-	     return new ResponseEntity<>(result, HttpStatus.OK);
-		}
+     return new ResponseEntity<>(result, HttpStatus.OK);
+	}
 	
-	
+	@GetMapping(value = "/calendar/my/group")
+	 public ResponseEntity<?> getCalendarGroupList(@RequestParam(value="user_id") String user_id, @RequestParam(value="group_id") String group_id){
+	  //원래 이러면 안되지만,, 임시적 허용
+	 
+     List<Calendar> result = calendarService.getCalendarGroupList(user_id, group_id);
+     System.out.println("[Event List]");
+
+    return new ResponseEntity<>(result, HttpStatus.OK);
+	}
 	
 }

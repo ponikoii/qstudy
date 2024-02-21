@@ -46,5 +46,13 @@ public class CalendarService {
 	}
 	public List<Calendar> getCalendarList(String id){
 		return calendarMapper.getCalendarList(id);
+	}//
+	
+	public List<Calendar> getCalendarGroupList(String user_id, String group_id){
+		Calendar ca = new Calendar();
+		ca.setUser_id(user_id);
+		ca.setGroup_id(group_id);
+		
+		return calendarMapper.getCalendarGroupList(ca);
 	}
 }

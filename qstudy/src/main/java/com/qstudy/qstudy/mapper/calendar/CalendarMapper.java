@@ -11,4 +11,6 @@ public interface CalendarMapper {
 	List<Calendar> getCalendarMonthInfo(String month);
 	void insertEvent(Calendar ca);
 	List<Calendar> getCalendarList(String id);
+	List<Calendar> getCalendarGroupList(Calendar ca);
+	//
 }

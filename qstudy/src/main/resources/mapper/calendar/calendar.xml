@@ -17,4 +17,10 @@
     (select color from group_attend ga where ga.group_id = c.group_id and ga.user_id = c.user_id) as color 
     from calendar c where user_id = #{user_id};
   </select>
+  
+   <select id="getCalendarGroupList" parameterType="com.qstudy.qstudy.dto.calendar.Calendar">
+	select *, 
+	(select picture from userprofile u where u.id=c.user_id) as picture 
+	from calendar c where group_id=#{group_id} and user_id != #{user_id};
+  </select>
 </mapper>

@@ -9,7 +9,16 @@ public class Calendar {
 	private String memo;
 	private String update_date;
 	private String color;
+	private byte[] picture;
 	
+	public byte[] getPicture() {
+		return picture;
+	}
+
+	public void setPicture(byte[] picture) {
+		this.picture = picture;
+	}
+
 	public String getColor() {
 		return color;
 	}
