@@ -71,7 +71,6 @@ public class GroupListService {
 	public void deleteGroupMember(HashMap<String, Object> requestBody) {
 		GroupAttendList ga = new GroupAttendList();
 		String group_id = (String)requestBody.get("group_id");
-//		String user_id = (String)requestBody.get("user_id");
 		String user_id = String.valueOf(requestBody.get("user_id"));
 		
 		ga.setGroup_id(group_id);
