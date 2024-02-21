@@ -25,6 +25,7 @@ public class GithubLoginService {
 		user.setId(requestBody.get("id").toString());
 		user.setEmail((String)requestBody.get("login"));
 		user.setNickname((String)requestBody.get("login"));
+		user.setPicture(requestBody.get("avatar_url").toString().getBytes());
 		
 		githubLoginMapper.saveGithub(user);
 	}

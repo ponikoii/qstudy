@@ -29,16 +29,19 @@ public class GoogleLoginService {
 		System.out.println(requestBody.get("sub"));
 		System.out.println(requestBody.get("email"));
 		System.out.println(requestBody.get("name"));
+		System.out.println(requestBody.get("picture"));
 		
 		// JOSN 문자열에서 email, name 추출
 		String id = (String)requestBody.get("sub");
 		String email = (String)requestBody.get("email");
 		String name = (String)requestBody.get("name");
+		byte[] picture = requestBody.get("picture").toString().getBytes();
 		
 		User user = new User();
 		user.setId(id);
 		user.setEmail(email);
 		user.setNickname(name);
+		user.setPicture(picture);
 		
 		//  user 데이터베이스에 저장
 		googleLoginMapper.saveGoogle(user);
