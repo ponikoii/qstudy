@@ -22,5 +22,7 @@ public interface GroupListMapper {
 	void deleteGroupMember(GroupAttendList ga);
 	void deleteEvent(Calendar c);
 	void deleteGroup(GroupList gl);
+	void deleteGroupAttend(GroupAttendList ga);
+	void deleteCalendar(Calendar ca);
 
 }

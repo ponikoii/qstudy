@@ -56,11 +56,14 @@
 	 
 	 <!-- 스터디 삭제 -->
 	  <delete id="deleteGroup">
-		delete ga, gl, ca 
-		from group_attend ga
-		join group_list gl on ga.group_id = gl.group_id
-		join calendar ca on ga.group_id = ca.group_id
-		where ga.group_id = #{group_id};
+		DELETE  FROM  group_list  where group_id = #{group_id};
+	  </delete>
+	  
+	  <delete id="deleteGroupAttend">
+		  DELETE  from group_attend where group_id = #{group_id};
+	  </delete>
+	  <delete id="deleteCalendar">
+		  DELETE  FROM  calendar  where group_id = #{group_id};
 	  </delete>
 	  
 	  

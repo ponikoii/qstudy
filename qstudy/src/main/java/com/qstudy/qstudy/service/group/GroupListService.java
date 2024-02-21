@@ -68,6 +68,7 @@ public class GroupListService {
 		return groupListMapper.getGroupMember(id);
 	}
 	
+	// 스터디원 삭제
 	public void deleteGroupMember(HashMap<String, Object> requestBody) {
 		GroupAttendList ga = new GroupAttendList();
 		String group_id = (String)requestBody.get("group_id");
@@ -78,6 +79,8 @@ public class GroupListService {
 		groupListMapper.deleteGroupMember(ga);
 		
 	}
+	
+	// 스터디원 삭제시, 일정도 삭제
 	public void deleteEvent(HashMap<String, Object> requestBody) {
 		Calendar ca = new Calendar();
 		String group_id = (String)requestBody.get("group_id");
@@ -89,6 +92,7 @@ public class GroupListService {
 		
 	}
 	
+	// 스터디 삭제
 	public void deleteGroup(HashMap<String, Object> requestBody) {
 		GroupList gl = new GroupList();
 		String group_id = (String)requestBody.get("group_id");
@@ -96,6 +100,20 @@ public class GroupListService {
 		
 		groupListMapper.deleteGroup(gl);
 		
+	}
+	public void deleteGroupAttend(HashMap<String, Object> requestBody) {
+		GroupAttendList ga = new GroupAttendList();
+		String group_id = (String)requestBody.get("group_id");
+		ga.setGroup_id(group_id);
+		
+		groupListMapper.deleteGroupAttend(ga);
+	}
+	public void deleteCalendar(HashMap<String, Object> requestBody) {
+		Calendar ca = new Calendar();
+		String group_id = (String)requestBody.get("group_id");
+		ca.setGroup_id(group_id);
+		
+		groupListMapper.deleteCalendar(ca);
 	}
 
 }
