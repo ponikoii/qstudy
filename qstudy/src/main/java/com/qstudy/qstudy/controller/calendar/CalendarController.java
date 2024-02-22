@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -66,5 +67,16 @@ public class CalendarController {
 
     return new ResponseEntity<>(result, HttpStatus.OK);
 	}
+	
+	@DeleteMapping(value = "/calendar/group")
+	 public ResponseEntity<?> deleteCalendarList(@RequestParam(value="id") String id){
+		  //원래 이러면 안되지만,, 임시적 허용
+		 
+	    calendarService.deleteCalendarList(id);
+	    HashMap<String, Object> result = new HashMap<>();
+		result.put("message", "Success Delete ");
+
+		return new ResponseEntity<>(result, HttpStatus.OK);
+		}
 	
 }

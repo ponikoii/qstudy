@@ -55,4 +55,8 @@ public class CalendarService {
 		
 		return calendarMapper.getCalendarGroupList(ca);
 	}
+	//deleteCalendarList
+	public void deleteCalendarList(String id){
+		calendarMapper.deleteCalendarList(id);
+	}
 }

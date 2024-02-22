@@ -23,4 +23,8 @@
 	(select picture from userprofile u where u.id=c.user_id) as picture 
 	from calendar c where group_id=#{group_id} and user_id != #{user_id};
   </select>
+  
+  <delete id="deleteCalendarList" parameterType="String">
+	  delete from calendar where id=#{id}
+  </delete>
 </mapper>

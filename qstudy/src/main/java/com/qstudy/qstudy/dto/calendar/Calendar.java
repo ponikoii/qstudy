@@ -1,6 +1,8 @@
 package com.qstudy.qstudy.dto.calendar;
 
 public class Calendar {
+	private int id;
+
 	private String user_id;
 	private String group_id;
 	private String title;
@@ -10,7 +12,14 @@ public class Calendar {
 	private String update_date;
 	private String color;
 	private byte[] picture;
-	
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 	public byte[] getPicture() {
 		return picture;
 	}
