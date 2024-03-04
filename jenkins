@@ -11,7 +11,11 @@ pipeline {
         stage('Build') {
             steps {
                 // Maven 또는 Gradle을 사용하여 프로젝트 빌드
-                sh 'gradle build'
+                sh ```
+                    ls -l
+                    cd qstudy
+                    ls -l
+                ```
             }
         }
    	}
