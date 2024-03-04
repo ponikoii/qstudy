@@ -43,7 +43,7 @@ public class GroupListController {
 	  //원래 이러면 안되지만,, 임시적 허용
 	 
       List<GroupList> result = groupListService.getMyGroupList(id);
-      System.out.println("[Search]");
+      System.out.println("[Group Search]");
 
      return new ResponseEntity<>(result, HttpStatus.OK);
 	}
@@ -63,6 +63,7 @@ public class GroupListController {
 	public ResponseEntity<?> GroupMember(@RequestParam(value="id") String id){
 	       List<GroupMember> result = groupListService.getGroupMember(id);
 	       System.out.println(result);
+	       
 
 	      return new ResponseEntity<>(result, HttpStatus.OK);
 	      }
