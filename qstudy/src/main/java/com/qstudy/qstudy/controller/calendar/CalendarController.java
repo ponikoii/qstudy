@@ -21,7 +21,7 @@ import com.qstudy.qstudy.service.calendar.CalendarService;
 @RestController
 @CrossOrigin
 public class CalendarController {
-	//테스트 커밋
+	//테스트 커밋2
 	private CalendarService calendarService;
 	
 	public CalendarController(CalendarService calendarService) {
