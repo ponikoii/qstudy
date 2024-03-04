@@ -8,6 +8,11 @@ pipeline {
                 git branch: 'main', credentialsId: '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', url: 'https://github.com/iam6ukk/qstudy.git'
             }
         }
-   		// stage...
+        stage('Build') {
+            steps {
+                // Maven 또는 Gradle을 사용하여 프로젝트 빌드
+                sh 'gradle build'
+            }
+        }
    	}
 }
