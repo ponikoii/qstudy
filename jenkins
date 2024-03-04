@@ -15,6 +15,9 @@ pipeline {
                     ls -l
                     cd qstudy
                     ls -l
+
+                    ./gradlew clean
+                    ./gradlew build
                 '''
             }
         }
