@@ -21,7 +21,7 @@ import com.qstudy.qstudy.service.calendar.CalendarService;
 
 @Controller
 public class WebController {
-  @GetMapping(value =  {"/", "/login"})
+	@GetMapping(value =  {"/", "/login", "/main", "/main/all", "/main/my","/main/my/group", "/main/schedule", "/main/mypage" })
     public String forward() {
       System.out.println("[TEST]");
         return "forward:/index.html";
