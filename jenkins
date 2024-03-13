@@ -5,13 +5,13 @@ pipeline {
         
         stage('github-clone-backend') {
             steps {
-                git branch: 'main', credentialsId: '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', url: 'https://github.com/iam6ukk/qstudy.git'
+                git branch: 'main', credentialsId: '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', url: 'https://github.com/iam6ukk/qstudy.git'
             }
         }
 
         stage('github-clone-frontend') {
             steps {
-                git branch: 'main', credentialsId: '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', url: 'https://github.com/iam6ukk/qstudy_front.git'
+                git branch: 'main', credentialsId: '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', url: 'https://github.com/iam6ukk/qstudy_front.git'
             }
         }
 
