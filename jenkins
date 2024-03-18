@@ -5,7 +5,7 @@ pipeline {
         
         stage('github-clone-backend') {
             steps {
-                git branch: 'main', credentialsId: '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', url: 'https://github.com/iam6ukk/qstudy.git'
+                git branch: 'main', credentialsId: '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', url: 'https://github.com/iam6ukk/qstudy.git'
             }
         }
 
