@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1526234b.css",
+    "main.js": "/static/js/main.a5d5d7f3.js",
+    "static/js/787.f2c90a79.chunk.js": "/static/js/787.f2c90a79.chunk.js",
+    "static/media/WantedSans-Regular.ttf": "/static/media/WantedSans-Regular.1cbb8b78c5dff1345db7.ttf",
+    "static/media/background.jpg": "/static/media/background.6064a8ec82640fc13872.jpg",
+    "static/media/meeting.png": "/static/media/meeting.9e487bfd78b05718e116.png",
+    "static/media/sociology.png": "/static/media/sociology.c33bff546c65997266ce.png",
+    "static/media/google.png": "/static/media/google.e12914ad8afda3f6f2e8.png",
+    "static/media/github.png": "/static/media/github.44eee0c4a6c25b0d7347.png",
+    "static/media/user.png": "/static/media/user.eb758b047f252d56a698.png",
+    "static/media/profile.png": "/static/media/profile.e79ceee13cfb446409bd.png",
+    "index.html": "/index.html",
+    "main.1526234b.css.map": "/static/css/main.1526234b.css.map",
+    "main.a5d5d7f3.js.map": "/static/js/main.a5d5d7f3.js.map",
+    "787.f2c90a79.chunk.js.map": "/static/js/787.f2c90a79.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1526234b.css",
+    "static/js/main.a5d5d7f3.js"
+  ]
+}
