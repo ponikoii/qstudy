@@ -3,22 +3,37 @@ pipeline {
     
     stages {
         
-        stage('github-clone') {
+        stage('github-clone-backend') {
             steps {
-                git branch: 'main', credentialsId: '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', url: 'https://github.com/iam6ukk/qstudy.git'
+                git branch: 'main', credentialsId: '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', url: 'https://github.com/iam6ukk/qstudy.git'
             }
         }
-        stage('Build') {
+
+        stage('Frontend Building') {
+            steps {
+                sh '''
+                    ls -l
+                    cd qstudy_front
+                    ls -l
+
+                    npm run build
+                '''
+            }
+        }
+
+        stage('move front build files') {
+            steps {
+                sh '''
+                    cp -r build/* ../qstudy/src/main/resources/static
+                '''
+            }
+        }
+
+        stage('Backend Building') {
             steps {
                 // Maven 또는 Gradle을 사용하여 프로젝트 빌드
                 sh '''
                     ls -l
-                    cd qstudy
-                    ls -l
-
-                    chmod +x gradlew
-                    ./gradlew clean
-                    ./gradlew build
                 '''
             }
         }
