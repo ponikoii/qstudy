@@ -1,11 +1,13 @@
 # 1. Java 베이스 이미지 사용
+
+
 FROM openjdk:17-jdk-alpine
 
 # 2. JAR 파일 위치 설정
 VOLUME /tmp
 
 # 3. 애플리케이션 JAR 파일을 이미지에 복사
-ARG JAR_FILE=target/qstudy.jar
+ARG JAR_FILE=build/libs/qstudy-0.0.1-SNAPSHOT.jar
 COPY ${JAR_FILE} qstudy.jar
 
 # 4. 애플리케이션 실행
